@@ -157,7 +157,7 @@ int wmain(int argc, wchar_t* argv[])
     }
 
     printf("\nCalculating hashes for %llu segments of the file %ls\nfrom ofset %016llx to %016llx (inclusive)\n\n", nSegments, filename, WindowFirst, WindowLast);
-    printf("|       File Offset Range       |\t|            Hash              |\n");
+    printf("|       File Offset Range       |\t|          MD5 Hash            |\n");
     printf("|-------------------------------|\t|------------------------------|\n");
     
 
