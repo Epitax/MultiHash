@@ -1,6 +1,6 @@
 A small command line utility for MS-Windows written in C in VisualStudio 2019, which creates multiple MD5 hashes of a single file. Also known as "segmented hashing".
 
-USAGE: MultiHash.exe FileToHash NumberOfHashSegments <OffsetRange> e.g.: 1BEEF-20000
+USAGE: MultiHash.exe FileToHash NumberOfHashSegments OffsetRange e.g.: 1BEEF-20000
 
 For example:
 
