@@ -7,7 +7,7 @@ For example:
 MultiHash.exe BigFile.bin 100
 
 ...calculates 100 consecutive MD5 hashes of the entire Bigfile.bin file.
-In other words: it divides the BigFile.bin into 100 equal size segments and calculates a MD5 hash of each segment.
+In other words: it divides the BigFile.bin into 100 equal size segments and calculates an MD5 hash of each segment.
 
 MultiHash.exe BigFile.bin 100 642c06f40-642f509a6
 
