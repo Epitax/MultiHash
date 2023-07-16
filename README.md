@@ -21,4 +21,4 @@ A: Scenario:  You have been downloading a 16TB file over a slow FTP connection f
 This utility allows you to detect which bytes did not transfer correctly without doing the full 16TB file compare / re-download.
 This is done by running the MultiHash utility on the FTP server AND on the FTP client machine and comparing only the hashes of that big file before and after the transfer.
 Once a mismatching hash is identified, you can narrow down the search to a smaller range of file offsets and find the corrupted bytes.
-Just several kB of hashes need to be tranferred and compared to find the culprit in a huge file.  Once this is done the corrupted bytes can be downloaded anew and used to patch the downloaded corrupted file.
+Just several kB of hashes need to be tranferred and compared to find the culprit in a huge file.  Once this is done the correct bytes can be downloaded anew and used to patch the downloaded corrupted file.
