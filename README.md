@@ -11,7 +11,7 @@ In other words: it divides the BigFile.bin into 100 equal size segments and calc
 
 MultiHash.exe BigFile.bin 100 642c06f40-642f509a6
 
-...calculates 100 consecutive MD5 hashes of the Bigfile.bin starting from the hexadecimal offset 642c06f40 and ending at the offset 642f509a6 (inclusive).
+...calculates 100 consecutive MD5 hashes of the partial Bigfile.bin starting from the hexadecimal offset 642c06f40 and ending at the offset 642f509a6 (inclusive).
 
 The file offsets can also be specified in an open form, e.g.:<br>
 -1CB2 means from the beginning of the file (offset 0) up to the file offset 0x1cb2 and
