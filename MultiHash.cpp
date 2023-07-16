@@ -3,15 +3,15 @@
 #include <windows.h>
 #include <Wincrypt.h>
 
+#define ALGORITHM CALG_MD5
 #define BUFSIZE 4096
-
 
 DWORD PrintHash(HCRYPTHASH hHash)
 {
     DWORD cbData = sizeof(DWORD);
     PBYTE pbData = NULL;
     DWORD cHashSize;
-    CHAR Digits[] = "0123456789ABCDEF";
+    CHAR Digits[] = "0123456789abcdef";
     DWORD dwStatus = 0;
 
     
@@ -147,7 +147,7 @@ int wmain(int argc, wchar_t* argv[])
         return dwStatus;
     }
  
-    if (!CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash))
+    if (!CryptCreateHash(hProv, ALGORITHM, 0, 0, &hHash))
     {
         dwStatus = GetLastError();
         printf("ERROR: CryptCreateHash failed: %08x\n", dwStatus);
@@ -157,7 +157,7 @@ int wmain(int argc, wchar_t* argv[])
     }
 
     printf("\nCalculating hashes for %llu segments of the file %ls\nfrom ofset %016llx to %016llx (inclusive)\n\n", nSegments, filename, WindowFirst, WindowLast);
-    printf("|       File Offset Range       |\t|          MD5 Hash            |\n");
+    printf("|       File Offset Range       |\t|           MD5 Hash           |\n");
     printf("|-------------------------------|\t|------------------------------|\n");
     
 
@@ -182,7 +182,7 @@ int wmain(int argc, wchar_t* argv[])
       
         if ( (NextToRead > SegLast) || (cbRead == 0) )
         {
-            printf("%016llx-%016llx\t", SegFirst, SegLast);
+            printf("%016llX-%016llX\t", SegFirst, SegLast);
             PrintHash(hHash);
 
             if ((NextToRead > WindowLast) || (cbRead == 0))
@@ -190,7 +190,7 @@ int wmain(int argc, wchar_t* argv[])
 
             CryptDestroyHash(hHash);
 
-            if (!CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash))
+            if (!CryptCreateHash(hProv, ALGORITHM, 0, 0, &hHash))
             {
                 dwStatus = GetLastError();
                 printf("ERROR: CryptCreateHash failed: %08x\n", dwStatus);
