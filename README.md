@@ -17,6 +17,10 @@ The file offsets can also be specified in an open form, e.g.:<br>
 -1CB2 means from the beginning of the file (offset 0) up to the file offset 0x1cb2 and
 1BC2- means from the file offset 0x1cb2 up to the end of file.
 
+The hashing algorithm can be changed by altering the line: #define ALGORITHM
+
+Other possibe algorithms are: CALG_SHA1, CALG_SHA_256, CALG_SHA_512, CALG_3DES, CALG_AES_128, etc...
+
 Note: This utility does not write any files.  It only reads the file in BUFSIZE chunks (see the source in MultiHash.cpp) and calculates the hashes.
 
 Q: WHAT IS THIS USEFUL FOR?
