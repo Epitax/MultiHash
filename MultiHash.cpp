@@ -82,7 +82,7 @@ int wmain(int argc, wchar_t* argv[])
 
     if (argc < 2)
     {
-        printf("USAGE: FileToHash NumberOfHashSegments <OffsetRange e.g.: 1BEEF-20000>\n");
+        printf("USAGE: FileToHash NumberOfHashSegments <OffsetRange> e.g.: 1BEEF-20000\n");
         return -1;
     }
 
@@ -156,8 +156,10 @@ int wmain(int argc, wchar_t* argv[])
         return dwStatus;
     }
 
-    printf("Calculating hashes for %llu segments of the file %ls from ofset %016llx to %016llx (inclusive)\n", nSegments, filename, WindowFirst, WindowLast);
-    printf("File Offset Range --------------------- Hash\n");
+    printf("\nCalculating hashes for %llu segments of the file %ls\nfrom ofset %016llx to %016llx (inclusive)\n\n", nSegments, filename, WindowFirst, WindowLast);
+    printf("|       File Offset Range       |\t|            Hash              |\n");
+    printf("|-------------------------------|\t|------------------------------|\n");
+    
 
     mySetFilePointer(hFile, WindowFirst, FILE_BEGIN);
     NextToRead = WindowFirst;
