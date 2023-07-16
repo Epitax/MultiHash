@@ -17,7 +17,7 @@ This utility does not write any files.  It only reads the file in BUFSIZE chunks
 
 Q: WHAT IS THIS USEFUL FOR?
 
-A: Scenario:  You have donloaded a 16TB file over a slow FTP connection for a week but a several bytes of the file came over corrupted.  
+A: Scenario:  You have downloaded a 16TB file over a slow FTP connection for a week but a several bytes of the file came over corrupted.  
 This utility will allow you to detect which bytes did not transfer correctly, by running it on the FTP server AND on the FTP client machine and comparing the hashes of the file before and after the transfer.
 Once a mismatching hash is identified, you can narrow down the search to asmaller range of file offsets and find the corrupted bytes.
 This is possible without doing the full 16TB file compare / re-donwload. Just several kB of hashes need to be tranferred and compared.
